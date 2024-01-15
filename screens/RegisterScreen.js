@@ -6,19 +6,28 @@ import Button from "../components/Button";
 
 const RegisterScreen = () => {
   return (
-    <View>
-      <ScreenTitle title="Register" />
-      <Input placeholder="First Name" />
-      <Input placeholder="Last Name" />
-      <Input placeholder="Email" />
-      <Input placeholder="Phone Number" />
-      <Input placeholder="Password" />
-      <Button title="Submit" />
-      <Button title="Back" />
+    <View style={styles.container}>
+      <View>
+        <ScreenTitle title="Register" />
+        <Input placeholder="First Name" />
+        <Input placeholder="Last Name" />
+        <Input placeholder="Email" />
+        <Input placeholder="Phone Number" />
+        <Input placeholder="Username" />
+        <Input placeholder="Password" />
+        <Button title="Submit" />
+        <Button title="Back" />
+      </View>
     </View>
   );
 };
 
 export default RegisterScreen;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});

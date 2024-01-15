@@ -4,6 +4,9 @@ import Button from "../components/Button";
 import Logo from "../assets/images/logo.png";
 
 const MainScreen = () => {
+  // const handleLoginRegister = (value) => {
+  //   if (value)
+  // }
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -21,7 +24,9 @@ export default MainScreen;
 
 const styles = StyleSheet.create({
   container: {
-    maxWidth: "80%",
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
   },
 
   imageContainer: {

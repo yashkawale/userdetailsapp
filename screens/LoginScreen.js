@@ -6,16 +6,24 @@ import Button from "../components/Button";
 
 const LoginScreen = () => {
   return (
-    <View>
-      <ScreenTitle title="Login" />
-      <Input placeholder="Enter username" />
-      <Input placeholder="Enter password" />
-      <Button title="Login" />
-      <Button title="Back" />
+    <View style={styles.container}>
+      <View>
+        <ScreenTitle title="Login" />
+        <Input placeholder="Enter username" />
+        <Input placeholder="Enter password" />
+        <Button title="Login" />
+        <Button title="Back" />
+      </View>
     </View>
   );
 };
 
 export default LoginScreen;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
