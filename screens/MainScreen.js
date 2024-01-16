@@ -3,18 +3,21 @@ import React from "react";
 import Button from "../components/Button";
 import Logo from "../assets/images/logo.png";
 
-const MainScreen = () => {
-  // const handleLoginRegister = (value) => {
-  //   if (value)
-  // }
+const MainScreen = ({ login, register }) => {
+  const Login = () => {
+    login();
+  };
+  const Register = () => {
+    register();
+  };
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
         <Image source={Logo} style={styles.image} />
       </View>
       <View style={styles.buttonContainer}>
-        <Button title="Login" />
-        <Button title="Register" />
+        <Button title="Login" func={Login} />
+        <Button title="Register" func={Register} />
       </View>
     </View>
   );

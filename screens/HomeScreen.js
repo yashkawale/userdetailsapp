@@ -5,19 +5,25 @@ import Colors from "../constants/Colors";
 import Button from "../components/Button";
 import UserDetails from "../components/UserDetails";
 
-const HomeScreen = () => {
+const HomeScreen = ({ goToMainScreen, userData }) => {
   const [showDetails, setShowDetails] = useState(false);
 
   const handleShowDetails = () => {
     setShowDetails(!showDetails);
   };
+
+  const Logout = () => {
+    goToMainScreen();
+  };
+
+  const loggedUserData = [userData];
   return (
     <View style={styles.container}>
       <ScreenTitle title="Home" />
       <View style={styles.mainContainer}>
         <View style={styles.textContainer}>
           <Text style={styles.greetText}>Welcome,</Text>
-          <Text style={styles.userName}>Username</Text>
+          <Text style={styles.userName}>{loggedUserData[0].firstName}</Text>
           <Text style={styles.instructions}>
             To check your details click on the button below.
           </Text>
@@ -26,9 +32,9 @@ const HomeScreen = () => {
           <Button title="Details" func={handleShowDetails} />
         </View>
       </View>
-      {showDetails && <UserDetails />}
+      {showDetails && <UserDetails loggedUser={loggedUserData} />}
       <View style={[styles.buttonContainer, styles.logoutButton]}>
-        <Button title="logout" />
+        <Button title="logout" func={Logout} />
       </View>
     </View>
   );
